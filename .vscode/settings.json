@@ -4,6 +4,7 @@
 		"algorithm": "c",
 		"memory": "c",
 		"stdlib.h": "c",
-		"fract_ol.h": "c"
+		"fract_ol.h": "c",
+		"math.h": "c"
 	}
 }

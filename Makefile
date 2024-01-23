@@ -3,7 +3,7 @@ NAME	= fractol
 
 # Compiler
 CC		= gcc
-CFLAGS	= -Wextra -Wall
+CFLAGS	= -Wextra -Wall -g
 
 # Minilibx
 MLX_PATH	= minilibx-linux/
@@ -22,7 +22,7 @@ INC			=	-I ./include/\
 
 # Sources
 SRC_PATH	=	src/
-SRC			=	main.c
+SRC			=	main.c fractal.c render.c
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 
 # Objects

@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/23 15:35:09 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/23 23:43:46 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define FRACT_OL_H
 # define X_SIZE 1280
 # define Y_SIZE 720
+# ifndef MAX_ITER
+#  define MAX_ITER 150
+# endif
 
 # include "mlx.h"
 
