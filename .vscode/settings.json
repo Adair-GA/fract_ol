@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"unistd.h": "c",
+		"algorithm": "c",
+		"memory": "c",
+		"stdlib.h": "c",
+		"fract_ol.h": "c"
+	}
+}
