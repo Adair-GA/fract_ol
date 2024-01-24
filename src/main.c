@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:24:30 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:10:48 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:40:43 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ int	close_key(int key, t_fractal *frac)
 	return (0);
 }
 
-int	mouse(int button, int x, int y, t_fractal *frac)
+int	mouse(int button, int _x, int _y, t_fractal *frac)
 {
 	int	zoom_count;
 
+	_x = _x + _y;
 	zoom_count = (abs(frac->zoom - 333) / 50) + 1;
 	if (button == 4 || button == 5)
 	{

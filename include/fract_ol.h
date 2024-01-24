@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fract_ol.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:11:32 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:39:07 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_fractal
 	int				bpp;
 	int				line_size;
 	int				endian;
-	double			zoom;
+	int				zoom;
 	double			x_offset;
 	double			y_offset;
 	enum e_fractal	name;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 23:01:51 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:12:11 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:26:19 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	select_draw(t_fractal *frac, double x, double y)
 	{
 		return (mandlebrot(frac, x, y));
 	}
+	return (0);
 }
 
 void	render(t_fractal *frac)
@@ -50,7 +51,7 @@ void	render(t_fractal *frac)
 			if (iter_count == MAX_ITER)
 				ft_pixel_put(frac, x, y, 0x000000);
 			else
-				ft_pixel_put(frac, x, y, ((0xABCDEF * iter_count) % 0xFFFFFF));
+				ft_pixel_put(frac, x, y, ((iter_count * 5) % 255 << 16));
 			x++;
 		}
 		x = 0;

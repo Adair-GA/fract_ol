@@ -3,3 +3,4 @@ libft/
 fractol
 *.o
 Makefile
+*.py
