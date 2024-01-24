@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:39:07 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 18:47:40 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct s_fractal
 	double			x_offset;
 	double			y_offset;
 	enum e_fractal	name;
+	int				color;
+	int				fase;
 }				t_fractal;
 
 #endif

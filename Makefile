@@ -22,7 +22,7 @@ INC			=	-I ./include/\
 
 # Sources
 SRC_PATH	=	src/
-SRC			=	main.c fractal.c render.c
+SRC			=	main.c fractal.c render.c colors.c
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 
 # Objects

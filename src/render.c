@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 23:01:51 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 18:26:19 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 21:17:50 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_pixel_put(t_fractal *frac, int x, int y, int color)
 }
 
 unsigned int	mandlebrot(t_fractal *frac, double x, double y);
+int				get_color(t_fractal *frac, int iterations);
+void			next_color(t_fractal *frac);
 
 int	select_draw(t_fractal *frac, double x, double y)
 {
@@ -51,7 +53,7 @@ void	render(t_fractal *frac)
 			if (iter_count == MAX_ITER)
 				ft_pixel_put(frac, x, y, 0x000000);
 			else
-				ft_pixel_put(frac, x, y, ((iter_count * 5) % 255 << 16));
+				ft_pixel_put(frac, x, y, get_color(frac, iter_count));
 			x++;
 		}
 		x = 0;

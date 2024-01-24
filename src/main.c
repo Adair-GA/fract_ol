@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:24:30 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:40:43 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 22:27:45 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 
 void	render(t_fractal *frac);
+int		update_colors(t_fractal *frac);
 
 int	close_win(t_fractal *frac)
 {
@@ -73,6 +74,7 @@ void	setup_mlx(t_fractal *frac)
 	mlx_key_hook(frac->win, close_key, frac);
 	mlx_mouse_hook(frac->win, mouse, frac);
 	mlx_do_key_autorepeaton(frac->mlx);
+	mlx_loop_hook(frac->mlx, update_colors, frac);
 }
 
 int	main(void)
@@ -84,6 +86,7 @@ int	main(void)
 	frac.zoom = 333;
 	frac.x_offset = -2.3;
 	frac.y_offset = -1.11;
+	frac.color = 255 << 16;
 	render(&frac);
 	mlx_loop(frac.mlx);
 }
