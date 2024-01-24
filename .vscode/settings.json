@@ -1,0 +1,13 @@
+{
+    "norminette.command": "norminette src/ -R CheckForbiddenSourceHeader",
+	"files.associations": {
+		"unistd.h": "c",
+		"algorithm": "c",
+		"memory": "c",
+		"stdlib.h": "c",
+		"fract_ol.h": "c",
+		"math.h": "c",
+		"stdio.h": "c",
+		"typeinfo": "c"
+	}
+}
