@@ -2,3 +2,4 @@ minilibx/
 libft/
 fractol
 *.o
+Makefile
