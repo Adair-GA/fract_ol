@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 18:47:40 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 23:33:15 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "mlx.h"
 # include <stdlib.h>
 # include "libft.h"
+# include "keys.h"
 
 enum e_fractal
 {

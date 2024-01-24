@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:24:30 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 22:27:45 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 23:45:10 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,38 @@ int	close_win(t_fractal *frac)
 	return (0);
 }
 
-int	close_key(int key, t_fractal *frac)
+int	key(int key, t_fractal *frac)
 {
 	int	zoom_count;
 
-	if (key == 53)
+	if (key == ESC)
 		return (close_win(frac));
 	zoom_count = (abs(frac->zoom - 333) / 50) + 1;
-	if (key == 123)
+	if (key == LEFT_ARR)
 		frac->x_offset -= 0.5 / zoom_count;
-	if (key == 124)
+	if (key == RIGHT_ARR)
 		frac->x_offset += 0.5 / zoom_count;
-	if (key == 125)
+	if (key == DOWN_ARR)
 		frac->y_offset += 0.5 / zoom_count;
-	if (key == 126)
+	if (key == UP_ARR)
 		frac->y_offset -= 0.5 / zoom_count;
 	render(frac);
 	return (0);
 }
 
-int	mouse(int button, int _x, int _y, t_fractal *frac)
+int	mouse(int bt, int _x, int _y, t_fractal *frac)
 {
 	int	zoom_count;
 
 	_x = _x + _y;
 	zoom_count = (abs(frac->zoom - 333) / 50) + 1;
-	if (button == 4 || button == 5)
+	if (bt == 4 || bt == 5)
 	{
-		if (button == 4)
+		if (bt == 4 && (frac->zoom + 40 * (zoom_count * .2) + 40) < __INT32_MAX__)
 		{
 			frac->zoom += 40 * (zoom_count * .2) + 40;
 		}
-		else if (button == 5)
+		else if (bt == 5)
 		{
 			frac->zoom -= 40 * (zoom_count * .2) + 40;
 		}
@@ -71,7 +71,7 @@ void	setup_mlx(t_fractal *frac)
 	frac->img_addr = mlx_get_data_addr(frac->img, &frac->bpp, &frac->line_size,
 			&frac->endian);
 	mlx_hook(frac->win, 17, 0, close_win, frac);
-	mlx_key_hook(frac->win, close_key, frac);
+	mlx_key_hook(frac->win, key, frac);
 	mlx_mouse_hook(frac->win, mouse, frac);
 	mlx_do_key_autorepeaton(frac->mlx);
 	mlx_loop_hook(frac->mlx, update_colors, frac);

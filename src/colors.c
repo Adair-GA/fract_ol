@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 21:15:52 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 22:30:27 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 23:31:02 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	ft_pixel_update(t_fractal *frac, int x, int y)
 
 int	update_colors(t_fractal *frac)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	x = 0;
 	y = 0;
