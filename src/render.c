@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 23:01:51 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 00:02:02 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 00:16:28 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_pixel_put(t_fractal *frac, int x, int y, int color)
 	pointer = (int *)(frac->img_addr + (frac->line_size * y));
 	pointer += x;
 	*pointer = new_color;
-	// printf("%X\n", new_color);
 }
 
 void	render(t_fractal *frac)
@@ -42,7 +41,7 @@ void	render(t_fractal *frac)
 			if (iter_count == MAX_ITER)
 				ft_pixel_put(frac, x, y, 0x000000);
 			else
-				ft_pixel_put(frac, x, y, ((0xABCDEF* iter_count) % 0xFFFFFF) | 220 << 24);
+				ft_pixel_put(frac, x, y, ((0xABCDEF * iter_count) % 0xFFFFFF));
 			x++;
 		}
 		x = 0;

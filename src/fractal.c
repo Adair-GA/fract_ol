@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:00:43 by adair             #+#    #+#             */
-/*   Updated: 2024/01/23 23:56:18 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 00:16:17 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ unsigned int	mandlebrot(double x, double y)
 		zy = 2. * zx * zy + y;
 		zx = temp_x;
 		i++;
-		if (zx * zx + zy* zy > (5))
-			break;
+		if (zx * zx + zy * zy > 4)
+			break ;
 	}
 	return (i);
 }

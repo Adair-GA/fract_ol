@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/23 23:43:46 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 00:09:11 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ typedef struct s_fractal
 	int		endian;
 }				t_fractal;
 
-void	ft_pixel_put(t_fractal *frac, int x, int y, int color);
 
 #endif
