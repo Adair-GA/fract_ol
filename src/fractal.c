@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   fractal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
+/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:00:43 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 00:16:17 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/24 16:12:05 by agondan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract_ol.h"
 
-unsigned int	mandlebrot(double x, double y)
+unsigned int	mandlebrot(t_fractal *frac, double x, double y)
 {
 	double				temp_x;
 	unsigned int		i;
@@ -22,15 +22,15 @@ unsigned int	mandlebrot(double x, double y)
 	i = 0;
 	zx = 0.0;
 	zy = 0.0;
-	x = x / 333 - 2.3;
-	y = y / 333 - 1.11;
+	x = x / frac->zoom + frac->x_offset;
+	y = y / frac->zoom + frac->y_offset;
 	while (i < MAX_ITER)
 	{
 		temp_x = zx * zx - zy * zy + x;
 		zy = 2. * zx * zy + y;
 		zx = temp_x;
 		i++;
-		if (zx * zx + zy * zy > 4)
+		if (zx * zx + zy * zy > 200)
 			break ;
 	}
 	return (i);

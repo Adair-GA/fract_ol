@@ -1,5 +1,5 @@
-minilibx-linux/
+minilibx/
 libft/
 fractol
 *.o
-minilibx/
+Makefile
