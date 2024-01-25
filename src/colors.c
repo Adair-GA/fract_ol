@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 21:15:52 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 23:31:02 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/25 11:21:06 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	ft_pixel_update(t_fractal *frac, int x, int y)
 
 	pointer = (int *)(frac->img_addr + (frac->line_size * y));
 	pointer += x;
+	if ((*pointer & 0x00FFFFFF) == 0)
+		return ;
 	new_color = get_color(frac, (*pointer >> 24) & 0xFF);
 	*pointer = new_color;
 }

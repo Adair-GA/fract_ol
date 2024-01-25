@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal.c                                          :+:      :+:    :+:   */
+/*   mandlebrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:00:43 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 16:12:05 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:08:56 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract_ol.h"
+
+void	mandlebrot_init(t_fractal *frac)
+{
+	frac->name = MANDLEBROT;
+	frac->zoom = 333;
+	frac->x_offset = -2.3;
+	frac->y_offset = -1.11;
+}
 
 unsigned int	mandlebrot(t_fractal *frac, double x, double y)
 {

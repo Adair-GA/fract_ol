@@ -6,7 +6,7 @@
 /*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:25:19 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 23:33:15 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/25 12:07:37 by adair            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define X_SIZE 1280
 # define Y_SIZE 720
 # ifndef MAX_ITER
-#  define MAX_ITER 50
+#  define MAX_ITER 40
 # endif
 
 # include "mlx.h"
@@ -46,5 +46,11 @@ typedef struct s_fractal
 	int				color;
 	int				fase;
 }				t_fractal;
+
+int		close_win(t_fractal *frac);
+int		key(int key, t_fractal *frac);
+int		mouse(int bt, int _x, int _y, t_fractal *frac);
+void	mandlebrot_init(t_fractal *frac);
+void	render(t_fractal *frac);
 
 #endif
