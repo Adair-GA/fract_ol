@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
+/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 23:01:51 by adair             #+#    #+#             */
-/*   Updated: 2024/01/24 21:17:50 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/25 17:41:40 by agondan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,19 @@ void	ft_pixel_put(t_fractal *frac, int x, int y, int color)
 }
 
 unsigned int	mandlebrot(t_fractal *frac, double x, double y);
+unsigned int	ship(t_fractal *frac, double x, double y);
+unsigned int	julia(t_fractal *frac, double x, double y);
 int				get_color(t_fractal *frac, int iterations);
 void			next_color(t_fractal *frac);
 
 int	select_draw(t_fractal *frac, double x, double y)
 {
 	if (frac->name == MANDLEBROT)
-	{
 		return (mandlebrot(frac, x, y));
-	}
-	return (0);
+	else if (frac->name == SHIP)
+		return (ship(frac, x, y));
+	else
+		return (julia(frac, x, y));
 }
 
 void	render(t_fractal *frac)

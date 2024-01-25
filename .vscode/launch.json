@@ -5,7 +5,9 @@
 		"type": "cppdbg",
 		"request": "launch",
 		"program": "${workspaceFolder}/fractol",
-		"args": [],
+		"args": [
+			"mandl",
+		],
 		"preLaunchTask": "Make",
 		"stopAtEntry": false,
 		"cwd": "${fileDirname}",
@@ -30,7 +32,11 @@
 		"type": "cppdbg",
 		"request": "launch",
 		"program": "${workspaceFolder}/fractol",
-		"args": [],
+		"args": [
+			"julia",
+			"7454",
+			"5"
+		],
 		"preLaunchTask": "Make",
 		"stopAtEntry": false,
 		"cwd": "${fileDirname}",

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adair <adair@student.42.fr>                +#+  +:+       +#+        */
+/*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:24:30 by adair             #+#    #+#             */
-/*   Updated: 2024/01/25 12:09:10 by adair            ###   ########.fr       */
+/*   Updated: 2024/01/25 17:37:48 by agondan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,24 @@ void	setup_mlx(t_fractal *frac)
 	mlx_loop_hook(frac->mlx, update_colors, frac);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_fractal	frac;
 
+	if (argc == 2 && ft_strncmp(argv[1], "mandl", 5) == 0)
+		mandlebrot_init(&frac);
+	else if (ft_strncmp(argv[1], "julia", 5) == 0 && argc == 4)
+		julia_init(&frac, argv[2], argv[3]);
+	else if (ft_strncmp(argv[1], "ship", 4) == 0 && argc == 2)
+		ship_init(&frac);
+	else
+	{
+		ft_putendl_fd("Usage: fractol <type> [cx cy]", 1);
+		ft_putendl_fd("\ttype: mandl, julia, ship", 1);
+		ft_putendl_fd("\tcx, cy: parameters for julia", 1);
+		return (0);
+	}
 	setup_mlx(&frac);
-	mandlebrot_init(&frac);
 	frac.color = 255 << 16;
 	frac.fase = 0;
 	render(&frac);

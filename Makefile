@@ -1,12 +1,12 @@
 #Program name
 NAME	= fractol
-
+OS := $(shell uname)
 # Compiler
 CC		= gcc
 CFLAGS	= -Wextra -Wall -g
 
 # Minilibx
-MLX_PATH	= minilibx-linux/
+MLX_PATH	= minilibx/
 MLX_NAME	= libmlx.a
 MLX			= $(MLX_PATH)$(MLX_NAME)
 
@@ -18,11 +18,11 @@ LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
 # Includes
 INC			=	-I ./include/\
 				-I ./libft/\
-				-I ./minilibx-linux/
+				-I ./minilibx/
 
 # Sources
 SRC_PATH	=	src/
-SRC			=	main.c mandlebrot.c render.c colors.c controls.c
+SRC			=	main.c mandlebrot.c render.c colors.c controls.c ship.c julia.c
 SRCS		= $(addprefix $(SRC_PATH), $(SRC))
 
 # Objects
@@ -50,11 +50,17 @@ $(LIBFT):
 	@echo "Making libft..."
 	@make -sC $(LIBFT_PATH)
 
+ifeq ($(OS), Darwin)
+$(NAME): $(OBJS)
+	@echo "Compiling fractol..."
+	@$(CC) $(OBJS) -L$(MLX_PATH) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "Fractol ready."
+else
 $(NAME): $(OBJS)
 	@echo "Compiling fractol..."
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX) $(LIBFT) $(INC) -lXext -lX11 -lm
 	@echo "Fractol ready."
-
+endif
 bonus: all
 
 clean:
