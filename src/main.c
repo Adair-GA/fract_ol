@@ -6,7 +6,7 @@
 /*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:24:30 by adair             #+#    #+#             */
-/*   Updated: 2024/01/25 17:37:48 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:30:43 by agondan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && ft_strncmp(argv[1], "mandl", 5) == 0)
 		mandlebrot_init(&frac);
-	else if (ft_strncmp(argv[1], "julia", 5) == 0 && argc == 4)
+	else if (argc == 4 && ft_strncmp(argv[1], "julia", 5) == 0)
 		julia_init(&frac, argv[2], argv[3]);
-	else if (ft_strncmp(argv[1], "ship", 4) == 0 && argc == 2)
+	else if (argc == 2 && ft_strncmp(argv[1], "ship", 4) == 0)
 		ship_init(&frac);
 	else
 	{
