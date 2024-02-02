@@ -3,7 +3,7 @@ NAME	= fractol
 OS := $(shell uname)
 # Compiler
 CC		= gcc
-CFLAGS	= -Wextra -Wall -g
+CFLAGS	= -Werror -Wextra -Wall -g
 
 # Minilibx
 MLX_PATH	= minilibx/
