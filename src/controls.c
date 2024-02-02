@@ -6,7 +6,7 @@
 /*   By: agondan- <agondan-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:35:29 by adair             #+#    #+#             */
-/*   Updated: 2024/01/25 18:07:51 by agondan-         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:47:10 by agondan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,15 @@ int	mouse(int bt, int _x, int _y, t_fractal *frac)
 	zoom_count = (abs(frac->zoom - 333) / 50) + 1;
 	if (bt == 4 || bt == 5)
 	{
-		if (bt == 4 && (frac->zoom + 40 * (zoom_count * .2) + 40) < 2147483647)
+		if (bt == 4 && (frac->zoom * 1.3) < 2147483647)
 		{
-			frac->zoom += 40 * (zoom_count * .2) + 40;
+			if (frac->zoom == 0)
+				frac->zoom = 10;
+			frac->zoom *= 1.3;
 		}
-		else if (bt == 5)
+		else if (bt == 5 && (frac->zoom / 1.3) != 0)
 		{
-			frac->zoom -= 40 * (zoom_count * .2) + 40;
+			frac->zoom /= 1.3;
 		}
 		render(frac);
 	}
